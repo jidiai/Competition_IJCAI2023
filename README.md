@@ -12,7 +12,7 @@ A tutorial on Jidi: [Tutorial](https://github.com/jidiai/ai_lib/blob/master/asse
 
 ## Environment
 
-<img src=https://github.com/jidiai/Competition_Olympics-Integrated/blob/main/olympics_engine/assets/multi-task-olympics.gif width=600>
+<img src="imgs/AI-Olympics_render.gif" width=600>
 
 
 Check details in Jidi Competition [IJCAI 2023 AI Qlympics Competition](http://www.jidiai.cn/compete_detail?compete=34) 
