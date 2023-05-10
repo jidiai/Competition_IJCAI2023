@@ -21,7 +21,7 @@ Check details in Jidi Competition [IJCAI 2023 AI Qlympics Competition](http://ww
 ### Olympics-Integrated
 <b>Tags</b>: Partial Observation; Continuous Action Space; Continuous Observation Space, Multi-Tasks
 
-<b>Introduction: </b>Agents participate in the Olympic Games. In this series of competitions, two agents participate in different Olympics games, including running, football, table hockey, wrestling etc.
+<b>Introduction: </b>Agents participate in the Olympic Games. In this series of competitions, two agents participate in **Six** Olympics games, including **running, football, table hockey, wrestling, curling and billiard**.
 
 <b>Environment Rules:</b> 
 1. This game has two sides and both sides control an elastic ball agent with the same mass and radius.
