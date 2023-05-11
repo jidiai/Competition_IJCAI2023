@@ -1,6 +1,8 @@
-# Competition_IJCAI2023
-source code for IJCAI 2023 Competition
 <img src="imgs/Jidi%20logo.png" width='300px'>  <img src="imgs/ijcai-logo.png" width='300px'>
+# Competition_IJCAI2023
+
+source code for IJCAI 2023 Competition
+
 
 ## Multi-Agent Game Evaluation Platform --- Jidi (及第)
 Jidi supports online evaluation service for various games/simulators/environments/testbeds. Website: [www.jidiai.cn](www.jidiai.cn).
