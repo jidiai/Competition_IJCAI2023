@@ -1,5 +1,12 @@
 # Competition_IJCAI2023
 source code for IJCAI 2023 Competition
+<img src="imgs/Jidi%20logo.png" width='300px'>  <img src="imgs/ijcai-logo.png" width='300px'>
+
+## Multi-Agent Game Evaluation Platform --- Jidi (及第)
+Jidi supports online evaluation service for various games/simulators/environments/testbeds. Website: [www.jidiai.cn](www.jidiai.cn).
+
+A tutorial on Jidi: [Tutorial](https://github.com/jidiai/ai_lib/blob/master/assets/Jidi%20tutorial.pdf)
+
 
 ## Environment
 
@@ -10,7 +17,7 @@ Check details in Jidi Competition [IJCAI 2023 AI Qlympics Competition](http://ww
 
 
 ### Olympics-Integrated
-<b>Tags</b>: Partial Observation; Continuous Action Space; Continuous Observation Space
+<b>Tags</b>: Partial Observation; Continuous Action Space; Continuous Observation Space, Multi-Tasks
 
 <b>Introduction: </b>Agents participate in the Olympic Games. In this series of competitions, two agents participate in different Olympics games, including running, football, table hockey, wrestling etc.
 
@@ -31,6 +38,24 @@ Check details in Jidi Competition [IJCAI 2023 AI Qlympics Competition](http://ww
 <b>Environment ends condition: </b>The game ends when all subgames are finished.
 
 <b>Registration: </b>Go to (http://www.jidiai.cn/compete_detail?compete=17 and http://www.jidiai.cn/compete_detail?compete=18).
+
+---
+## Navigation
+
+```
+|-- Competition_IJCAI2023                   // https://github.com/jidiai/Competition_IJCAI2023.git 
+	|-- agents                          // Agents that act in the environment
+	|	|-- random                  // A random agent demo
+	|	|	|-- submission.py   // A ready-to-submit random agent file
+	|-- env		                    // scripts for the environment
+	|	|-- config.py               // environment configuration file
+	|	|-- olympics_integrated.py  // The environment wrapper	
+	|-- olympics_engine		    // Game engine (https://github.com/jidiai/olympics_engine)
+	|-- rl_trainer                      // A training example of some of the sub-scenarios (for reference only)
+	|-- utils               
+	|-- run_log.py		            // run the game with provided agents (same way we evaluate your submission in the backend server)
+```
+
 
 
 ---
@@ -65,3 +90,13 @@ in which you are controlling agent 1 (light red)
 ## Ready to submit
 
 Random policy --> *agents/random/submission.py*
+
+
+## Frequently asked question:
+- Q: Any requirement on the submitted agents?
+- A: The submitted agent will be run on CPU-only machine and the decision time needs to be within 1 second 
+and takes memory no more than 500M. The submitted file must contain a `submission.py` script that has 
+a `my_controller(*)` function in it (See the random agent demo). We will call this function to generate action in our evaluation backend.
+
+- Q: Any requirement on agent training?
+- A: We add no restriction to agent training. You can solve the tasks with any method you like, e.g. rule-based, heuristic, RL, etc.
