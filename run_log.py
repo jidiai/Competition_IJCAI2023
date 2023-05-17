@@ -27,13 +27,13 @@ class NpEncoder(json.JSONEncoder):
 
 def get_players_and_action_space_list(g):
     if sum(g.agent_nums) != g.n_player:
-        raise Exception("agent number = %d 不正确，与n_player = %d 不匹配" % (sum(g.agent_nums), g.n_player))
+        raise Exception("agent number = %d is incorrect， mismatach with n_player = %d " % (sum(g.agent_nums), g.n_player))
 
     n_agent_num = list(g.agent_nums)
     for i in range(1, len(n_agent_num)):
         n_agent_num[i] += n_agent_num[i - 1]
 
-    # 根据agent number 分配 player id
+    # 根据agent number 分配 player id (assign player id according to agent number)
     players_id = []
     actions_space = []
     for policy_i in range(len(g.obs_type)):
@@ -51,7 +51,7 @@ def get_players_and_action_space_list(g):
 
 def get_joint_action_eval(game, multi_part_agent_ids, policy_list, actions_spaces, all_observes):
     if len(policy_list) != len(game.agent_nums):
-        error = "模型个数%d与玩家个数%d维度不正确！" % (len(policy_list), len(game.agent_nums))
+        error = "number of models %d mismatch with number of players %d ！" % (len(policy_list), len(game.agent_nums))
         raise Exception(error)
 
     # [[[0, 0, 0, 1]], [[0, 1, 0, 0]]]
@@ -59,7 +59,7 @@ def get_joint_action_eval(game, multi_part_agent_ids, policy_list, actions_space
     for policy_i in range(len(policy_list)):
 
         if game.obs_type[policy_i] not in obs_type:
-            raise Exception("可选obs类型：%s" % str(obs_type))
+            raise Exception("available obs type：%s" % str(obs_type))
 
         agents_id_list = multi_part_agent_ids[policy_i]
 
@@ -171,5 +171,5 @@ if __name__ == "__main__":
     policy_list = [args.opponent, args.my_ai] #["random"] * len(game.agent_nums), here we control agent 2 (green agent)
 
     multi_part_agent_ids, actions_space = get_players_and_action_space_list(game)
-
-    run_game(game, env_type, multi_part_agent_ids, actions_space, policy_list, render_mode)
+    for _ in range(4):
+        run_game(game, env_type, multi_part_agent_ids, actions_space, policy_list, render_mode)
